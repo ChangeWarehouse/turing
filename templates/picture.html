@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load static %}
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="text-align: center">
+                <h4 class="modal-title" id="myModalLabel">
+                    图片对比
+                </h4>
+                <h4 ><a href="{% url 'mobile' %}" style="text-decoration:none;">返回</a></h4>
+                <br>
+                {% for foo in dic %}
+                <div style="text-align: center">
+                    <img style="height: 300px;width: 450px" src="{% static foo.url %}"><h4>盗版</h4></img>
+                    <br>
+                    <img style="height: 350px;width: 500px" src="{% static foo.url1 %}"><h4>正版</h4></img>
+                </div>
+                {% endfor %}
+
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
+</div>
+</body>
+</html>

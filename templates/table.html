@@ -1,0 +1,48 @@
+{% extends 'tables.html' %}
+{% block pp %}
+<div class="card-body">
+                            <div class="table-hover">
+                                <table class="table table-bordered" style='table-layout:fixed;'>
+
+                                    <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>平台</th>
+                                        <th>对比来源</th>
+                                        {#                                            <th>名称</th>#}
+                                        <th>版权信息</th>
+{#                                        <th>图片</th>#}
+{#                                        <th>视频</th>#}
+                                        <th>创建时间</th>
+                                        <th>更新时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for foo in dic %}
+                                        <tr>
+                                            <th>{{ forloop.counter }}</th>
+                                            <td>{{ foo.text }}</td>
+                                            <td>{{ foo.type }}</td>
+                                            <td>{{ foo.copyright }}</td>
+{#                                            pictur#}
+{#                                            <td><a href="{% url 'pictur' foo.pk %}"#}
+{#                                                   class="btn btn-primary glyphicon glyphicon-search"#}
+{#                                                   data-toggle="tooltip"#}
+{#                                                   data-placement="top"#}
+{#                                                   title="点击查看"></a></td>#}
+{#                                            modal#}
+{#                                            <td><a href="{% url 'modal' foo.pk %}"#}
+{#                                                   class="btn btn-primary glyphicon glyphicon-search"#}
+{#                                                   data-toggle="tooltip"#}
+{#                                                   data-placement="top"#}
+{#                                                   title="点击播放"></a></td>#}
+                                            <td>{{ foo.time_create | date:'Y-m-d' }}</td>
+                                            <td>{{ foo.time_update | date:'Y-m-d' }}</td>
+                                        </tr>
+                                    {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+{% endblock %}

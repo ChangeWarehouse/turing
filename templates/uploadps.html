@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ 
+<form action="{% url 'uploadps' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+     
+    <div>
+        <input name="img" type="file">
+    </div>
+    <h4>盗版图片</h4>
+
+    <br>
+    <br>
+    <div>
+        <input name="img1" type="file">
+                   
+        <button type="submit">上传</button>
+    </div>
+    <h4>正版图片</h4>
+</form>
+</body>
+</html>
